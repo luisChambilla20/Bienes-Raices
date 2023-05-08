@@ -41,6 +41,7 @@ class ActiveRecord
         $query .= self::$db->escape_string($this->id) . "'";
         $query .= " LIMIT 1";
 
+
         $resultado = self::$db->query($query);
 
         if ($resultado) {
@@ -86,6 +87,7 @@ class ActiveRecord
             if ($columna === 'id') continue;
             $atributos[$columna] = $this->$columna;
         }
+        
         return $atributos;
     }
 

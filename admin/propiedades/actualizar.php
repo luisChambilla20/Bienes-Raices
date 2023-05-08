@@ -2,6 +2,7 @@
 require "../../includes/app.php";
 
 use App\Propiedad;
+use App\Vendedor;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
@@ -16,8 +17,7 @@ if (!$id) {
 
 $propiedad = Propiedad::forId($id);
 
-$empleado = 'SELECT * FROM vendedores';
-$resultado  = mysqli_query($db, $empleado);
+$vendedores = Vendedor::all();
 
 $errores = Propiedad::getErrores();
 

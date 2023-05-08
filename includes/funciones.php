@@ -32,3 +32,30 @@ function s($html): string
     $s = htmlspecialchars($html);
     return $s;
 }
+
+function verificarTipoEliminar($tipo)
+{
+    $todo = ['propiedad', 'vendedor'];
+    return in_array($tipo, $todo);
+}
+
+function enviarMensaje($caso)
+{
+    $mensaje = '';
+    switch ($caso) {
+        case 1:
+            $mensaje = 'Creado correctamente';
+            break;
+        case 2:
+            $mensaje = 'Actualizado correctamente';
+            break;
+        case 3:
+            $mensaje = 'Eliminado correctamente';
+            break;
+        default:
+            $mensaje = false;
+            break;
+    }
+
+    return $mensaje;
+}
