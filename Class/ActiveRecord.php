@@ -87,7 +87,7 @@ class ActiveRecord
             if ($columna === 'id') continue;
             $atributos[$columna] = $this->$columna;
         }
-        
+
         return $atributos;
     }
 
@@ -143,6 +143,13 @@ class ActiveRecord
     public static function all()
     {
         $query = "SELECT * FROM " . static::$tabla;
+        $resultado = self::consultarSQL($query);
+        return $resultado;
+    }
+
+    public static function get($limit)
+    {
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT " . $limit;
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
