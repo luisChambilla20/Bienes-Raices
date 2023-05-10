@@ -1,7 +1,6 @@
 <?php
 
 use App\Propiedad;
-
 if ($_SERVER['SCRIPT_NAME'] === '/Curso/bienesRaicesPHP_INICIO/anuncios.php') {
     $propedades = Propiedad::all();
 } else {
